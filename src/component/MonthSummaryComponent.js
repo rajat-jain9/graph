@@ -11,12 +11,12 @@ class MonthSummary extends Component{
 
 	render() {
 		let greenChartProps = {
-      "strokeWidth": 5,
-      "renderPoints": true,
-      "strokeColor": 'green',
+      "strokeWidth": 1,
+      "renderPoints": false,
+      "strokeColor": '#fff',
 
-      "pointColor1": 'red',
-      "pointColor2": 'red',
+      "pointColor1": '#00a0de',
+      "pointColor2": '#00a0de',
 
     }
     let data = [
@@ -29,57 +29,68 @@ class MonthSummary extends Component{
             "props": {
               ...greenChartProps,
               fillGradient: true,
-              gradientEndColor: 'green',
-              gradientStartColor: 'yellow'
+              gradientEndColor: '#00a0de',
+              gradientStartColor: '#00a0de'
            }
           },
           {
             "x": '2',
-            "y": 45,
+            "y": 95,
 
             "props": {
               ...greenChartProps,
               fillGradient: true,
-              gradientEndColor: 'green',
-              gradientStartColor: 'yellow'
+              gradientEndColor: '#00a0de',
+              gradientStartColor: '#00a0de'
             }
           },
           {
             "x": '3',
-            "y": 10,
+            "y": 50,
             "props": {
               ...greenChartProps,
               fillGradient: true,
-              gradientEndColor: 'green',
-              gradientStartColor: 'yellow'
+              gradientEndColor: '#00a0de',
+              gradientStartColor: '#00a0de'
             }
           },
           {
             "x": '4',
-            "y": 20,
+            "y": 80,
             "props": {
               ...greenChartProps,
               fillGradient: true,
-              gradientEndColor: 'green',
-              gradientStartColor: 'yellow'
+              gradientEndColor: '#00a0de',
+              gradientStartColor: '#00a0de'
            }
           },
           {
             "x": '5',
-            "y": 20,
+            "y": 70,
             "props": {
               ...greenChartProps,
               fillGradient: true,
-              gradientEndColor: 'green',
-              gradientStartColor: 'yellow'
+              gradientEndColor: '#00a0de',
+              gradientStartColor: '#00a0de'
            }
           },
+          {
+            "x": '6',
+            "y": 90,
+            "props": {
+              ...greenChartProps,
+              fillGradient: true,
+              gradientEndColor: '#00a0de',
+              gradientStartColor: '#00a0de'
+           }
+          },
+
         ],
       }
     ]
  
 		return(
-			<View style={{flex:1,backgroundColor:'green'}}>
+			<View style={{flex:1,backgroundColor:'#142f47'}}>
 			  <View style={styles.aggContainer}>
           <View style={styles.aggAmount}>
             <View >
@@ -109,19 +120,22 @@ class MonthSummary extends Component{
 
 			   <View style={styles.chartContainer}>
 			     <Chart
+
               data={data}
               stepsOY={4}
-              axisTextColorActive={'red'}
+              axisTextColorActive={'#fff'}
               renderAxisXLines={false}
               renderAxisYLines={false}
               hideXAxe={true}
               hideYAxe={true}
-              activeAxisXTextArray={['1','2', '3', '4','5']}
-              axisTextOpacity={0}
+              activeAxisXTextArray={['1','2', '3', '4','5','6']}
+              axisTextOpacity={4}
               backgroundColor={'#142f47'}
               leftPanelBG={'#142f47'}
-              width={800}
+              // width={800}
               leftPanelWidth={5}
+              gradientOpacityStart='1'
+              gradientOpacityEnd='1'
             />			
           </View>
 
@@ -197,7 +211,8 @@ amount:{
 chartContainer:{
   flex:2,
   backgroundColor:'#142f47',
-  alignItems:'flex-start'
+  alignItems:'flex-start',
+
 },
 card: {
     marginTop: 10,
